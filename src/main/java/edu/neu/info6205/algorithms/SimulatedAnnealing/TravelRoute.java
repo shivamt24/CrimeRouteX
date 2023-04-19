@@ -1,10 +1,10 @@
-package edu.neu.info6205.SimulatedAnnealing;
+package edu.neu.info6205.algorithms.SimulatedAnnealing;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import edu.neu.info6205.SimulatedAnnealing.utils.RouteWriter;
+import edu.neu.info6205.algorithms.SimulatedAnnealing.utils.RouteWriter;
 
 public class TravelRoute {
 

@@ -1,4 +1,4 @@
-package edu.neu.info6205.SimulatedAnnealing;
+package edu.neu.info6205.algorithms.SimulatedAnnealing;
 
 import edu.neu.info6205.algorithms.Christofides.MiscUtil;
 
