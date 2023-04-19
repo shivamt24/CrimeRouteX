@@ -1,0 +1,30 @@
+/* .Sidebar {
+    position: relative;
+    width: 20%;
+    max-width: 300px;
+    padding: 1rem;
+    background-color: #1d1616;
+    text-align: center;
+
+} */
+.Sidebar__content {
+    position: fixed;
+    width: 40%;
+    max-width: 300px;
+    top:0;
+    left: 0;
+    padding-left: 2rem;
+}
+
+.Sidebar__Group {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Sidebar__Input {
+    width: 4rem;
+    padding-left: .5rem;
+    margin-bottom: 1rem
+}
+
