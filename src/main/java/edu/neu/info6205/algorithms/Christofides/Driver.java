@@ -9,11 +9,13 @@ public class Driver {
 	public static void main(String[] args) {
 			List<Location> crimeLocations = new ArrayList<Location>();
 			double distanceMatrix[][];
-			String fileName = "./src/main/resources/inputs/info6205.spring2023.teamproject.csv";
+			String pathName = "./src/main/resources/inputs";
+			String fileName = "/info6205.spring2023.teamproject";
+			String ext = ".csv";
 			HashMap<Integer, Location> map = new HashMap<>();
 			int Vertices = 0;
 		    int Edges = 0;
-			List<String> fileData = FileUtil.readFile(fileName);
+			List<String> fileData = FileUtil.readFile(pathName+fileName+ext);
 			for (int i = 0; i < fileData.size(); i++) {
 				if(i == 0) continue;
 				String[] fields = fileData.get(i).split(",");
@@ -35,7 +37,7 @@ public class Driver {
 			    	}
 			    }
 			}
-
+		    
 		    //1. Creating Minimum Spanning Tree using Prims
 			Graph g=new Graph(Vertices, Edges);
 			Edge [] primsResult = g.primMST(distanceMatrix);
@@ -53,10 +55,11 @@ public class Driver {
 	        g1.createEulerCircuit();
 	        
 	        //5. skipping repeated vertices, i.e. shortcutting to form Hamiltonian Circuit
-		    ArrayList<Integer> HamiltonianCircuit = g1.clearRepeatedCities(g1.EulerCircuit);
+		    List<Integer> HamiltonianCircuit = g1.clearRepeatedCities(g1.EulerCircuit);
 		    
 	        double totalDistance = MiscUtil.computeDistance(HamiltonianCircuit, distanceMatrix);
-			String outputFileName = "./src/main/resources/outputs/ChristofidesOutput.csv";
+			String outputPathName = "./src/main/resources/outputs";
+			String outputFileName = fileName+"-output";
 			ArrayList<String> outputFileContent = new ArrayList<String>();
 			outputFileContent.add("longitude,latitude,tolongitude,tolatitude,id,distance");
 			for(int k=0; k<HamiltonianCircuit.size()-1; k++) {
@@ -73,6 +76,6 @@ public class Driver {
 				if(k == 0) outputFileContent.add(l1.getLongitude()+","+l1.getLatitude()+","+l2.getLongitude()+","+l2.getLatitude()+","+l1.getCrimeId()+","+totalDistance);
 				else outputFileContent.add(l1.getLongitude()+","+l1.getLatitude()+","+l2.getLongitude()+","+l2.getLatitude()+","+l1.getCrimeId());
 			}
-			FileUtil.writeFile(outputFileContent, outputFileName);
+			FileUtil.writeFile(outputFileContent, outputPathName+outputFileName+ext);
 		}
 }

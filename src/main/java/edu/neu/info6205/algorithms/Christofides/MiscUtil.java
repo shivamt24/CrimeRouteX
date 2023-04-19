@@ -1,6 +1,6 @@
 package edu.neu.info6205.algorithms.Christofides;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MiscUtil {
 	public static double haversineDistance(double lon1, double lon2, double lat1, double lat2) {
@@ -21,7 +21,7 @@ public class MiscUtil {
         return rad * c * 1000; // convert to meters
 	}
 	
-	public static double computeDistance(ArrayList<Integer> resultCircuit, double distanceMatrix[][]) {
+	public static double computeDistance(List<Integer> resultCircuit, double distanceMatrix[][]) {
 		double sum = 0;
 		for(int i=0; i<resultCircuit.size()-1;i++) sum += distanceMatrix[resultCircuit.get(i)][resultCircuit.get(i+1)];
 		return sum;
