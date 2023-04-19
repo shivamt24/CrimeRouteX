@@ -2,19 +2,21 @@ package edu.neu.info6205.SimulatedAnnealing;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-import edu.neu.info6205.SimulatedAnnealing.utils.FileUtil;
+import edu.neu.info6205.SimulatedAnnealing.utils.RouteWriter;
 
 public class TravelRoute {
 
     private ArrayList<Location> travel = new ArrayList<>();
     private ArrayList<Location> previousTravel = new ArrayList<>();
 
-    public TravelRoute(double[][] coordinates) {
-        for (int i = 0; i < coordinates.length; i++) {
-            double x = coordinates[i][0];
-            double y = coordinates[i][1];
-            travel.add(new Location(x, y));
+    public TravelRoute(List<Location> coordinates) {
+        for (int i = 0; i < coordinates.size(); i++) {
+            double x = coordinates.get(i).getX();
+            double y = coordinates.get(i).getY();
+            String crimeId = coordinates.get(i).getCrimeId();
+            travel.add(new Location(x, y, crimeId));
         }
     }
 
@@ -36,8 +38,8 @@ public class TravelRoute {
     }
 
 
-    public void getOptimalRoute() {
-        FileUtil.writeToFile(travel, "./src/main/resources/outputs/SimulatedAnnealingOutput.csv");
+    public void getOptimalRoute(Double bestDistance) {
+        RouteWriter.write(travel, "./src/main/resources/outputs/SimulatedAnnealingOutput.csv", bestDistance);
     }
 
     public void revertSwap() {
