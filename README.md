@@ -2,7 +2,7 @@
 INFO6205 Project: The Traveling Salesman Problem
 
 # User Interface
-![web app snippet](./src/data/snippet.png "Travelling Salesman Visualizer")
+![web app snippet](./visualise/tsp-vis/src/data/snippet.png "Travelling Salesman Visualizer")
 
 To run the Java program:
 1. Clone the app with the command: git clone git@github.com:shivamt24/INFO6205_Traveling_Salesman.git
@@ -53,7 +53,7 @@ To run the Java program:
 ## Visualization:
 ### User Interface Flow chart
 
-![flowchart](./src/data/flow.png "User Interface flowchart")
+![flowchart](./visualise/tsp-vis/src/data/flow.png "User Interface flowchart")
 
 ## To use the travelling salesman Java algorithm with the provided dataset, follow these steps:
 
