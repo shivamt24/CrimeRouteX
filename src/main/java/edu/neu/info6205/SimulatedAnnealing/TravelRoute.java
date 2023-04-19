@@ -37,7 +37,6 @@ public class TravelRoute {
         travel.set(b, x);
     }
 
-
     public void getOptimalRoute(Double bestDistance) {
         RouteWriter.write(travel, "./src/main/resources/outputs/SimulatedAnnealingOutput.csv", bestDistance);
     }
@@ -58,7 +57,7 @@ public class TravelRoute {
         int distance = 0;
         for (int index = 0; index < travel.size(); index++) {
             Location starting = getLocation(index);
-           
+
             Location destination;
             if (index + 1 < travel.size()) {
                 destination = getLocation(index + 1);
@@ -70,4 +69,3 @@ public class TravelRoute {
         return distance;
     }
 }
-

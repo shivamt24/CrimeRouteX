@@ -28,7 +28,7 @@ public class RouteWriter {
             Location first = travel.get(0);
             Location last = travel.get(travel.size() - 1);
             for (int i = 0; i < travel.size() - 1; i++) {
-                
+
                 Location cityA = travel.get(i);
                 Location cityB = travel.get(i + 1);
                 if (i == 0)
@@ -37,7 +37,8 @@ public class RouteWriter {
                 sb.append(cityA.getX() + "," + cityA.getY() + "," + cityB.getX() + "," + cityB.getY() + ","
                         + cityA.getCrimeId() + "\n");
             }
-            sb.append(last.getX() + "," + last.getY() + "," + first.getX() + "," + first.getY() + "," + last.getCrimeId());
+            sb.append(last.getX() + "," + last.getY() + "," + first.getX() + "," + first.getY() + ","
+                    + last.getCrimeId());
             writer.write(sb.toString());
             writer.close();
         } catch (IOException e) {
