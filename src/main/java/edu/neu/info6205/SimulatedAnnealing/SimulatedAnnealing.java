@@ -7,9 +7,9 @@ import edu.neu.info6205.algorithms.Christofides.FileUtil;
 
 public class SimulatedAnnealing {
 
-    public static double simulateAnnealing(double startingTemperature, int numberOfIterations, double coolingRate) {
+    public static double simulateAnnealing(double startingTemperature, int numberOfIterations, double coolingRate, String filename) {
         // Read from csv file
-        List<String> fileData = FileUtil.readFile("./src/main/resources/inputs/info6205.spring2023.teamproject.csv");
+        List<String> fileData = FileUtil.readFile(filename);
         List<Location> coordinates = new ArrayList<>();
 
         for (int i = 0; i < fileData.size(); i++) {
