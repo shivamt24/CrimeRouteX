@@ -31,11 +31,13 @@ public class RouteWriter {
 
                 Location cityA = travel.get(i);
                 Location cityB = travel.get(i + 1);
-                if (i == 0)
+                if (i == 0) {
                     sb.append(cityA.getX() + "," + cityA.getY() + "," + cityB.getX() + "," + cityB.getY() + ","
                             + cityA.getCrimeId() + "," + bestDistance + "\n");
-                sb.append(cityA.getX() + "," + cityA.getY() + "," + cityB.getX() + "," + cityB.getY() + ","
-                        + cityA.getCrimeId() + "\n");
+                } else {
+                    sb.append(cityA.getX() + "," + cityA.getY() + "," + cityB.getX() + "," + cityB.getY() + ","
+                            + cityA.getCrimeId() + "\n");
+                }
             }
             sb.append(last.getX() + "," + last.getY() + "," + first.getX() + "," + first.getY() + ","
                     + last.getCrimeId());
