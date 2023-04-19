@@ -38,7 +38,7 @@ public class TravelRoute {
     }
 
     public void getOptimalRoute(Double bestDistance) {
-        RouteWriter.write(travel, "./src/main/resources/outputs/SimulatedAnnealingOutput.csv", bestDistance);
+        RouteWriter.write(travel, "./src/main/resources/outputs/annealing.csv", bestDistance);
     }
 
     public void revertSwap() {
