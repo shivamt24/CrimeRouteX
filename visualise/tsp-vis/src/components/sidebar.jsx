@@ -48,10 +48,10 @@ function Sidebar({handleRender,prop}) {
                     label="Algorithm"
                     onChange={handleSelectChange}
                     >
+                    <MenuItem value={"christofides_15_cities"}>Christofides 14 points</MenuItem>
                     <MenuItem value={"christofides"}>Christofides Algorithm</MenuItem>
                     <MenuItem value={"annealing"}>Simulated Annealing</MenuItem>
-                    {/* <MenuItem value={"algo3"}>Algo3</MenuItem> */}
-                    <MenuItem value={""}>NONE</MenuItem>
+                    <MenuItem value={""}>None</MenuItem>
                 </Select>
             </FormControl>
           </div>
