@@ -1,13 +1,28 @@
 package edu.neu.info6205.SimulatedAnnealing;
 
-import edu.neu.info6205.SimulatedAnnealing.utils.FileUtil;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.neu.info6205.algorithms.Christofides.FileUtil;
 
 public class SimulatedAnnealing {
-    // Read from csv file
-    static double[][] coordinates = FileUtil.readCoordinates("./src/main/resources/inputs/info6205.spring2023.teamproject.csv");
-    private static TravelRoute travelRoute = new TravelRoute(coordinates);
 
     public static double simulateAnnealing(double startingTemperature, int numberOfIterations, double coolingRate) {
+        // Read from csv file
+        List<String> fileData = FileUtil.readFile("./src/main/resources/inputs/info6205.spring2023.teamproject.csv");
+        List<Location> coordinates = new ArrayList<>();
+
+        for (int i = 0; i < fileData.size(); i++) {
+            if (i == 0)
+                continue;
+            String[] fields = fileData.get(i).split(",");
+            String hexString = fields[0];
+            String last5Chars = hexString.substring(hexString.length() - 5);
+            Location locationObject = new Location(Double.parseDouble(fields[1]), Double.parseDouble(fields[2]),
+                    last5Chars);
+            coordinates.add(locationObject);
+        }
+        TravelRoute travelRoute = new TravelRoute(coordinates);
         System.out.println("Starting Simulated Annealing \n Temperature=" + startingTemperature
                 + " Iterations=" + numberOfIterations + " Cooling rate=" + coolingRate);
 
@@ -35,7 +50,7 @@ public class SimulatedAnnealing {
             }
         }
 
-        bestRoute.getOptimalRoute();
+        bestRoute.getOptimalRoute(bestDistance);
         return bestDistance;
     }
 
