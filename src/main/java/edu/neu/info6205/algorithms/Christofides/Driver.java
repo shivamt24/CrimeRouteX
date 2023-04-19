@@ -58,8 +58,8 @@ public class Driver {
 		    List<Integer> HamiltonianCircuit = g1.clearRepeatedCities(g1.EulerCircuit);
 		    
 	        double totalDistance = MiscUtil.computeDistance(HamiltonianCircuit, distanceMatrix);
-			String outputPathName = "./src/main/resources/outputs";
-			String outputFileName = fileName+"-output";
+			String outputPathName = "./src/main/resources/outputs/";
+			String outputFileName = "ChristofidesOutput";
 			ArrayList<String> outputFileContent = new ArrayList<String>();
 			outputFileContent.add("longitude,latitude,tolongitude,tolatitude,id,distance");
 			for(int k=0; k<HamiltonianCircuit.size()-1; k++) {
