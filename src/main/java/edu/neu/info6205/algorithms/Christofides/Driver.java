@@ -59,7 +59,7 @@ public class Driver {
 		    
 	        double totalDistance = MiscUtil.computeDistance(HamiltonianCircuit, distanceMatrix);
 			String outputPathName = "./src/main/resources/outputs/";
-			String outputFileName = "ChristofidesOutput";
+			String outputFileName = "christofides";
 			ArrayList<String> outputFileContent = new ArrayList<String>();
 			outputFileContent.add("longitude,latitude,tolongitude,tolatitude,id,distance");
 			for(int k=0; k<HamiltonianCircuit.size()-1; k++) {
