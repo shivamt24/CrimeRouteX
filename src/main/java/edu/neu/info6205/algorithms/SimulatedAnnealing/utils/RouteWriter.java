@@ -1,11 +1,11 @@
-package edu.neu.info6205.SimulatedAnnealing.utils;
+package edu.neu.info6205.algorithms.SimulatedAnnealing.utils;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import edu.neu.info6205.SimulatedAnnealing.Location;
+import edu.neu.info6205.algorithms.SimulatedAnnealing.Location;
 
 /**
  * File Util

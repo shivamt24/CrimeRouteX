@@ -1,4 +1,4 @@
-package edu.neu.info6205.SimulatedAnnealing;
+package edu.neu.info6205.algorithms.SimulatedAnnealing;
 
 import java.util.ArrayList;
 import java.util.List;
